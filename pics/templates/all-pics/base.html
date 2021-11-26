@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>MyPictures - {{title}}</title>
+  {% else %}
+    <title> MyPictures </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} <h1>Welcome to Mypics Galore</h1> {%endblock%}
+</body>
+</html>
