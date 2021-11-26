@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pics.apps.PicsConfig',
     'bootstrap4'
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +129,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+# adding config
+cloudinary.config( 
+  cloud_name = "mypicsgalore", 
+  api_key = "535379242366373", 
+  api_secret = "n9UwFGJI2je16EIZl4NbizpCXkM" 
+)
