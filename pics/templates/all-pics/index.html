@@ -2,5 +2,8 @@
 
 {% block content %}
 {{block.super}}
-<h1>hellloooooo</h1>
+{% for pic in photo %}
+        <h2>{{pic.name}}</h2>
+            <img src="{{pic.image.url}}" alt="ian" height="250" width="250">
+        {% endfor %}
 {% endblock %}

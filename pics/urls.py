@@ -1,6 +1,9 @@
 from django.conf.urls import url
-from . import views
+from django.contrib import admin
+from pics import views
+
 
 urlpatterns=[
-    url('^$',views.welcome,name = 'welcome'),
-]
+    url('admin/', admin.site.urls),
+    url(r'^photos/$',views.index,name = 'index')
+    ]
