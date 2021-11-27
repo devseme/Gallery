@@ -5,6 +5,7 @@
 {% for pic in photo %}
         <h2>{{pic.name}}</h2>
         <p>{{pic.category}}</p>
+        <p>{{pic.location}}</p>
             <img src="{{pic.image.url}}" alt="ian" height="250" width="250">
         {% endfor %}
 {% endblock %}
