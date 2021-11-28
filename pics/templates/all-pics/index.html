@@ -41,8 +41,10 @@
               </div>
             </div>
             <div class="modal-footer">
-                <p>Double click to copy this link!</p>
+                <p>Double click to copy the photo link...</p>
                 <input class="form-control" type="text" value="{{pic.image.url}}" id="{{pic.id}}.url">
+                <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
             </div>
           </div>
         </div>

@@ -15,12 +15,15 @@
 
   {% if photos %}
     {% for photos in photos  %}
+    <div class="column">  
       <div class="col-sm-6 col-md-3">
+        
           <h1>{{photos.name}}</h1>
           <img src="{{photos.image.url}}" alt="ian" height="300" width="300">
       </div>
     {% endfor %}
   {% endif %}
   </div>
+</div>
 </div>
 {% endblock %}
