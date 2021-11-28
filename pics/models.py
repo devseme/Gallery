@@ -48,9 +48,9 @@ class photos(models.Model):
         return images
     # get all photos
     @classmethod
-    def get_all_photos(cls):
-        images = photos.objects.all()
-        return images
+    def get_image_by_id(cls, id):
+        image = photos.objects.get(id=id)
+        return image
 
     @classmethod
     def search_by_category(cls,search_term):
