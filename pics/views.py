@@ -1,15 +1,32 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
-from .models import photos #import photos model
+from .models import photos,Category,Location 
 from django.core.exceptions import ObjectDoesNotExist
+
 # Create your views here.
 def welcome(request):
     return render(request, 'welcome.html')
 
 def index(request):
-    photo = photos.objects.all()
+    categories = Category.objects.all()
+    locations = Location.objects.all()
+    photo = photos.objects.all().order_by('-id')
     
-    return render(request, 'all-pics/index.html',{'photo':photo})  
+    
+    # if 'category' in request.GET and request.GET["category"]:
+    #     category_id = request.GET.get("category")
+    #     photo = photos.objects.filter(category = category_id)
+        
+    # elif 'location' in request.GET and request.GET["location"]:
+    #     location_id = request.GET.get("location")
+    #     photo = photos.objects.filter(location = location_id)
+       
+    # else:
+    #     photo = photos.objects.all()
+            
+    # ctx = {'photos':photo, 'categories': categories, 'locations':locations }
+    return render(request, 'all-pics/index.html',{'locations':locations,'photo':photo})
+    
 def search_results(request):
 
     if 'photos' in request.GET and request.GET["photos"]:

@@ -1,6 +1,5 @@
 asgiref==3.4.1
 beautifulsoup4==4.10.0
-bootstrap4==0.1.0
 certifi==2021.10.8
 cloudinary==1.28.0
 Django==3.2
