@@ -15,8 +15,7 @@ class Location(models.Model):
     def __str__(self):
         return self.position
 class photos(models.Model):
-    # title field
-    title = models.CharField(max_length=100)
+     
     #image field
     image = CloudinaryField('image')
     name = models.CharField(max_length =30)
@@ -46,6 +45,9 @@ class photos(models.Model):
     def search_by_category(cls,search_term):
         pics = cls.objects.filter(category__name__icontains=search_term)
         return pics
-
+    # @classmethod
+    # def filter_by_location(cls,search_location):
+    #     location = cls.objects.filter(location__name=search_location).all()
+    #     return location
         
     

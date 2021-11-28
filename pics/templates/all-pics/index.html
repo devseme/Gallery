@@ -2,10 +2,48 @@
 
 {% block content %}
 {{block.super}}
+<div class="container-fluid">
+    <!-- <h1><u>Pics Galore</u></h1> -->
+</div>
+<div class="container-fluid" style="overflow: hidden">
+    <div class="card-columns">
 {% for pic in photo %}
-        <h2>{{pic.name}}</h2>
-        <p>{{pic.category}}</p>
-        <p>{{pic.location}}</p>
-            <img src="{{pic.image.url}}" alt="ian" height="250" width="250">
+<div class="row"> 
+    <div class="col-xs-16 col-sm-6 col-md-6 ">
+<div class="card" data-toggle="modal" data-target="#{{image.id}}"style="width:300px; height: 300px;">
+    <img src="{{pic.image.url}}" alt="{{pic.name}}" height="300" width="300">
+        <h4>Name:{{pic.name}}</h4></div>
+        <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+           <div class="modal-content modalcard">
+               <div class="modal-header">
+                <h5 class="modal-title" id="imageheader">{{pic.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{pic.image.url}}" alt="{{pic.name}}" class="img-fluid" width="400" height="400">
+                    <p class="imgdesc text-center">{{pic.description}}</p>
+                      <span class="btn btn-sm btn-outline-success">{{pic.category}}</span>
+                        <a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{pic.location}}</a>  
+                        
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input class="form-control input-lg" type="text"
+                       value="{{pic.image.url}}" id="{{pic.id}}.url">
+                <button class="btn btn-success btn-sm" onclick="copyLink('{{pic.id}}.url')">Copy</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+    
+      </div>
+           </div>
+           </div>
+           </div>
         {% endfor %}
+        </div>
+        </div>
 {% endblock %}
