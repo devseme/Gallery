@@ -11,21 +11,14 @@ Users can also copy the link to a photo to paste . The search function will sear
 + user can see photos posted by admin
 + user can select an image and it pops up with more details
 + user can copy an images link
-+ user can 
+
 
 
 ## Requirements
 
 Python 3.8  
-Flask
+django
 
-## Setting up the Project
-
-  * Download and install Python 3.8
-  * Download and install Git.
-  * Fork the Repository.
-  * Clone the repository to your local machine `$  `
-  * Change directory to NewsApi `$ cd Blogs-App'
   
 ## Known Bugs
 There are no unresolved issues in regards to this code that I know of.
@@ -41,8 +34,7 @@ Just deployed link on GitHub and run it.
 - CSS 
 - Bootstrap
 - Python
-- Flask
-- 
+
 ## Contributing
 
 Feel free to raise a issue or make a pull request to fix a bug or add a new feature.(@Devseme)
