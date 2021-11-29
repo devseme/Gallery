@@ -1,31 +1,69 @@
 ## Gallery- A Django based personal gallery , 29/11/2021.
 
-This is a simple photo gallery web application that showcases  photos of a given user.
+This is a simple photo gallery web application that showcases exciting photos to users.
 Here,users get to view photos updated by the site admin.
 Users can see photos based on the location and time that they were posted . 
 Users can also copy the link to a photo to paste . The search function will search photos based on the categorie
 
 ## By Ian Ochenge
 
+##  Live Link
+https://mypictures321.herokuapp.com/
+
+
 ## Specifications
-+ user can see photos posted by admin
-+ user can select an image and it pops up with more details
-+ user can copy an images link
+* User can View different photos from the galllery
+* User can Click a single image to expand it and view the details of that photo
+* User can Search for images by different categories.
+* User can Copy a link to the photo.
+* A user can Filter photos based on the location.
 
-
-
-## Requirements
-
-Python 3.8  
-django
-
+## Setup and Installation 
+##### Clone the repository: 
+ ```bash
+ https://github.com/devseme/Gallery.git
+```
+##### Navigate into the folder and install requirements 
+ ```bash
+cd gallery pip install -r requirements.txt
+```
+##### Install and activate Virtual Environment 
+ ```bash
+- python3 -m venv virtual - source virtual/bin/activate
+```
+##### Install The Dependencies 
+ ```bash
+ pip install -r requirements.txt
+```
+##### Setup Database 
+  SetUp your database User,Password, Host then make migrate
+ ```bash
+python manage.py makemigrations pics
+ ```
+ Now Migrate
+ ```bash
+ python manage.py migrate
+```
+##### Run the application 
+ ```bash
+ python manage.py runserver
+```
+##### Running the application 
+ ```bash
+ python manage.py server
+```
+##### Testing the application 
+ ```bash
+ python manage.py test
+```
+Open the application on your browser `127.0.0.1:8000`.
   
 ## Known Bugs
 There are no unresolved issues in regards to this code that I know of.
 
 ## Prerequisites
 To be able to run this web application, you will need to have a web browser, preferably Google Chrome.
-Just deployed link on GitHub and run it.
+Just click on the  deployed(https://mypictures321.herokuapp.com/) link on GitHub and run it.
 
 
 ## Technologies Used
@@ -34,17 +72,17 @@ Just deployed link on GitHub and run it.
 - CSS 
 - Bootstrap
 - Python
+- Heroku
 
 ## Contributing
 
-Feel free to raise a issue or make a pull request to fix a bug or add a new feature.(@Devseme)
+Feel free to raise a issue or make a pull request to fix a bug or add a new feature.(@Devseme),semeochenge@gmail.com
 
 ## Support and contact details
 If there are any issues on how the code runs, concerns, questions or ideas, kindly reach out to me on my email address; 
 semeochenge@gmail.com
 
-##  <">live link to site</a>
-## Authors
+## Author
 * *Ian Seme* -  [Ian Seme]()
 ## License
 This project is licensed under the MIT License -
