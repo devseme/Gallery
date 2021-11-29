@@ -17,7 +17,7 @@ from decouple import config, Csv
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', True)
 # development
 
 DATABASES = {
@@ -39,12 +39,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -77,7 +77,7 @@ ROOT_URLCONF = 'MyPictures.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,9 +99,9 @@ WSGI_APPLICATION = 'MyPictures.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
-        'USER': '',
-    'PASSWORD':'',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+    'PASSWORD':config('DB_PASSWORD'),
     }
 }
 
@@ -148,19 +148,19 @@ STATICFILES_DIRS = [
 ]
 # adding config
 cloudinary.config( 
-  cloud_name = "mypicsgalore", 
-  api_key = "535379242366373", 
-  api_secret = "n9UwFGJI2je16EIZl4NbizpCXkM" 
+  cloud_name = config('C_NAME'), 
+  api_key = config('API_K'), 
+  api_secret = config('API_S')
 )
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # configuring the location for media
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
