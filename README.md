@@ -1,4 +1,5 @@
-## Gallery- A Django based personal gallery , 29/11/2021.
+## Gallery
+### 29th Nov. 2021
 
 This is a simple photo gallery web application that showcases exciting photos to users.
 Here,users get to view photos updated by the site admin.
