@@ -10,7 +10,7 @@
 {% for pic in photo %}
 <div class="row"> 
     <div class="col-xs-16 col-sm-6 col-md-6 ">
-<div class="card" data-toggle="modal" data-target="#{{image.id}}"style="width:200px; height: 200px;">
+<div class="card" data-toggle="modal" data-target="#{showPicModal{{pic.id}}"style="width:200px; height: 200px;">
     <div class = "col-md-4" data-toggle ="modal" data-target="#showPicModal">
         <img src="{{pic.image.url}}" alt="" class="img-responsive" height="300px" width="300px">
     </div>
@@ -18,7 +18,7 @@
         <h5><b>Category:{{pic.category}}</b></h5>
         <p><b>{{pic.date}}</b></p>
     </div>
-    <div class="modal fade" id="showPicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="showPicModal{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
