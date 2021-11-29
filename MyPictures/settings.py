@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pics.apps.PicsConfig',
     'bootstrap4',
-    'cloudinary'
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -148,10 +149,16 @@ STATICFILES_DIRS = [
 ]
 # adding config
 cloudinary.config( 
-  cloud_name = config('C_NAME'), 
-  api_key = config('API_K'), 
-  api_secret = config('API_S')
+  cloud_name = 'the-collector', 
+  api_key = '385692492331583', 
+  api_secret = 'wpPzGYYSWBJ_4NCwwSEC0YUMSO8'
 )
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'the-collector',
+    'API_KEY': '385692492331583',
+    'API_SECRET': 'wpPzGYYSWBJ_4NCwwSEC0YUMSO8'
+}
 
 
 # Simplified static file serving.
